@@ -11,3 +11,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#root {
+  height: 100vh;
+}
+.root-inner {
+  height: 100%;
+}
+ion-content button {
+  width: 50%;
+}
+ion-button {
+  width: 80%;
+
+}
+ion-button::part(native) {
+  width: 80%;
+}
+
+ion-button::part(native) .button-inner {
+  width: 80%;
+}
