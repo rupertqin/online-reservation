@@ -32,3 +32,7 @@ ion-button::part(native) {
 ion-button::part(native) .button-inner {
   width: 80%;
 }
+
+img {
+  /* transform: scale(0.5, 0.5) translate(-50%, -50%); */
+}
