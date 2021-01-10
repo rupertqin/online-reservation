@@ -1,3 +1,5 @@
+import React from 'react';
+import { Link } from "react-router-dom";
 import './style.scss';
 
 const wrapperStyle = {
@@ -17,11 +19,11 @@ const textStyle = {
 }
 
 export default function Intro() {
-  return <div style={wrapperStyle} className="page-intro">
-    <div>
+  return <div style={wrapperStyle} className="page-intro intro">
+    <Link to="/intro/step/1">
       <img style={imgStyle} src="/img/引导页1/引导页1-厨师机器人.png" alt="" />
       <h2 style={textStyle}>Hi,我是XXX</h2>
       <img style={img2Style} src="/img/引导页1/引导页1-文字框.png" alt="" />
-    </div>
+    </Link>
   </div>
 }

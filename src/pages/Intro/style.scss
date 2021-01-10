@@ -1,19 +1,28 @@
-body {
+html {
   font-size: (100/640)*10vw;
 }
 
 
 .page-intro {
-  // background: url(/public/img/个人信息/个人信息-信息图标.png) no-repeat;
+  // background: url('/img/个人信息/个人信息-信息图标.png') no-repeat;
   min-height: 100%;
-  text-align: center;
-  font-size: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-top: -2em;
+  padding: 3rem;
+  font-size: 3rem;
   overflow: hidden;
-  h2 {
-    margin: 0 auto 1em;
+
+  &.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    h2 {
+      margin: 0 auto 1em;
+    }
+
+  }
+
+  .steps {
+    display: flex;
+    justify-content: space-between;
   }
 }

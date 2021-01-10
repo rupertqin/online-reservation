@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { IonAlert, IonButton, IonContent } from '@ionic/react';
 import '@ionic/react/css/core.css';
 import Intro from "./pages/Intro/Intro"
+import Step1 from "./pages/Intro/Step1"
 
 import {
   BrowserRouter as Router,
@@ -10,7 +11,7 @@ import {
   Link
 } from "react-router-dom";
 
-export const AlertExample: React.FC = () => {
+const AlertExample: React.FC = () => {
   return (
     <Router>
       <div className="root-inner">
@@ -31,6 +32,9 @@ export const AlertExample: React.FC = () => {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
+          <Route path="/intro/step/1">
+            <Step1 />
+          </Route>
           <Route path="/intro">
             <Intro />
           </Route>
