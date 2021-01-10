@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import Steps from '@/components/Steps';
-import Radio from '@/components/Radio';
+import CompRadio from '~/components/CompRadio';
 
 const wrapperStyle = {
   background: 'url(/img/引导页2/bg.png) top/100% no-repeat',
@@ -32,7 +32,7 @@ export default function Intro() {
     </div>
     <div>
       <h2>性别</h2>
-      <Radio options={options} onSubmit={onSubmit} ></Radio>
+      <CompRadio options={options} onSubmit={onSubmit} ></CompRadio>
     </div>
   </div>
 }
