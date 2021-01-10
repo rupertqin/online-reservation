@@ -22,9 +22,46 @@ html {
   }
 
   &.steps {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h2 {
+      font-size: 3rem;
+    }
+
     img.dialog {
       margin-left: -18px;
     }
+
+    &.step1 {
+      .comp-radio {
+        padding: 0 2rem;
+      }
+    }
   }
 
+}
+
+.comp-radio {
+  .list {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  button {
+    border: none;
+    border-radius: 2rem;
+    background: rgb(104, 226,	220);
+    width: 184px;
+    line-height: 72px;
+    font-size: 3rem;
+    color: #fff;
+    &.submit {
+      width: 100%;
+    }
+    &.inactive {
+      background: #aaa;
+    }
+  }
 }

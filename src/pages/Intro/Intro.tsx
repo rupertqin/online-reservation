@@ -6,19 +6,14 @@ const wrapperStyle = {
   background: 'url(/img/引导页1/引导页背景.png) top/100% repeat',
 }
 const imgStyle = {
-  // width: `${703/2}px`,
   marginBottom: '1rem',
 }
 
-const img2Style = {
-  // width: `${648/2}px`,
-}
-
-const textStyle = {
+const textStyle: any = {
   color: 'rgb(142	166	167	)',
   fontSize: '3rem',
-  'text-align': 'center',
-  'font-weight': 'bold',
+  textAlign: 'center',
+  fontWeight: 'bold',
 }
 
 const boxStyle = {

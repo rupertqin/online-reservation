@@ -8,7 +8,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  // Link
 } from "react-router-dom";
 
 const AlertExample: React.FC = () => {
@@ -54,7 +54,7 @@ const AlertExample: React.FC = () => {
 }
 
 function Home() {
-  return <h2>Home</h2>;
+  return <h2>404</h2>;
 }
 
 function About() {
