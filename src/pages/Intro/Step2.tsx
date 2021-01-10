@@ -21,7 +21,7 @@ const options = [
 export default function Intro() {
   return <div style={wrapperStyle} className="page-intro steps step1">
     <div>
-      <Steps step={1} />
+      <Steps step={2} />
       <img src="/img/引导页2/引导页-客服机器人.png" alt="" />
       <img className="dialog" src="/img/引导页客服对话/引导页-对话框体重.png" alt="" />
     </div>

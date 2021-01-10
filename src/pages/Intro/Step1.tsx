@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import Steps from '@/components/Steps';
-import CompRadio from '~/components/CompRadio';
+import CompRadio from '../../components/CompRadio';
 
 const wrapperStyle = {
   background: 'url(/img/引导页2/bg.png) top/100% no-repeat',
