@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { IonAlert, IonButton, IonContent } from '@ionic/react';
+import { IonAlert, IonButton, IonContent, setupConfig } from '@ionic/react';
+
 import Intro from "./pages/Intro/Intro"
 import Step1 from "./pages/Intro/Step1"
 import Step2 from "./pages/Intro/Step2"
@@ -26,6 +27,11 @@ import {
   Route,
   // Link
 } from "react-router-dom";
+
+setupConfig({
+  rippleEffect: false,
+  mode: 'ios'
+});
 
 const AlertExample: React.FC = () => {
   return (

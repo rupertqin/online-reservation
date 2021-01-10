@@ -30,29 +30,27 @@ export default function Intro() {
       showBackdrop={false}
       backdropDismiss={false}
       columns={[{
-        name: "1111111",
-        options: [
-          {
-            text: 'ssss',
-            value: 0,
-          }
-        ]
+        name: "weight",
+        options: [...Array(120).keys()].map(i =>({ text: String(i + 80), value: i + 200 })),
       }, {
-        name: "2222222",
+        name: "unit",
         options: [
           {
-            text: 'ssss',
+            text: 'kg',
             value: 0,
           },
           {
-            text: 'ddddddd',
-            value: 0,
+            text: 'g',
+            value: 1,
           }
         ]
       }]} 
       buttons={[
         {
-          text: 'Cancel',
+          text: '',
+        },
+        {
+          text: '体重',
         },
         {
           text: '确定',
