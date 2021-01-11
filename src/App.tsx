@@ -25,6 +25,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Redirect,
   // Link
 } from "react-router-dom";
 
@@ -63,6 +64,7 @@ const AlertExample: React.FC = () => {
           <Route path="/intro">
             <Intro />
           </Route>
+          <Redirect to="/intro" />
           <Route path="/about">
             <About />
           </Route>

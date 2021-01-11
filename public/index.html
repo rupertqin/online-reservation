@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=640, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
@@ -39,5 +39,27 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      remChange();
+      window.addEventListener('resize', remChange);
+      function remChange() {
+        remove();
+        let width = window.screen.width;
+        let fixedw = 750;
+        let scale = width / fixedw; //获取到的屏幕宽度比上自定义的750宽度 获得对应比例
+        let meta = document.createElement("meta");
+        meta.setAttribute('name', 'viewport');
+        //将对应比例填入meta标签即可实现宽度自适应
+        meta.setAttribute('content', `width=device-width, initial-scale=${scale}, maximum-scale=${scale}, minimum-scale=${scale}, user-scalable=no`);
+        //meta将标签添加到文档中即可
+        document.head.appendChild(meta);
+      }
+      function remove() {
+        let meta = document.querySelector("meta[name='viewport']");
+        if (meta != null) {
+          document.head.removeChild(meta);
+        }
+      }
+    </script>
   </body>
 </html>
