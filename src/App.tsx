@@ -4,6 +4,7 @@ import { IonAlert, IonButton, IonContent, setupConfig } from '@ionic/react';
 import Intro from "./pages/Intro/Intro"
 import Step1 from "./pages/Intro/Step1"
 import Step2 from "./pages/Intro/Step2"
+import Step3 from "./pages/Intro/Step3"
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -25,6 +26,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Redirect,
   // Link
 } from "react-router-dom";
 
@@ -54,24 +56,14 @@ const AlertExample: React.FC = () => {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/intro/step/1">
-            <Step1 />
-          </Route>
-          <Route path="/intro/step/2">
-            <Step2 />
-          </Route>
-          <Route path="/intro">
-            <Intro />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/users">
-            <Users />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
+          <Route path="/intro/step/1" exact> <Step1 /> </Route>
+          <Route path="/intro/step/2" exact> <Step2 /> </Route>
+          <Route path="/intro/step/3" exact> <Step3 /> </Route>
+          <Route path="/intro" exact> <Intro /> </Route>
+          <Redirect from="/" to="/intro" />
+          <Route path="/about"> <About /> </Route>
+          <Route path="/users"> <Users /> </Route>
+          <Route path="/"> <Home /> </Route>
         </Switch>
       </div>
     </Router>

@@ -7,18 +7,9 @@ const wrapperStyle = {
   background: 'url(/img/引导页2/bg.png) top/100% no-repeat',
 }
 
-const options = [
-  {
-    label: '男',
-    value: 0,
-  },
-  {
-    label: '女',
-    value: 1,
-  }
-]
-
 export default function Intro() {
+  const history = useHistory();
+
   return <div style={wrapperStyle} className="page-intro steps step1">
     <div>
       <Steps step={2} />
@@ -55,7 +46,7 @@ export default function Intro() {
         {
           text: '确定',
           handler: (value) => {
-            console.log(`Got Value ${value}`);
+            history.push('/intro/step/3')
           }
         }
       ]}
