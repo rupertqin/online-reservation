@@ -30,7 +30,7 @@ export default function Intro() {
 
   return <div style={wrapperStyle} className="page-intro steps step4">
     <div>
-      <Steps step={2} />
+      <Steps step={4} />
       <img src="/img/引导页2/引导页-客服机器人.png" alt="" />
       <img className="dialog" src="/img/引导页客服对话/引导页-对话框目标.png" alt="" />
     </div>

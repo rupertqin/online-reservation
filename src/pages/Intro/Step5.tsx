@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Steps from '@/components/Steps';
 
@@ -8,20 +8,34 @@ const wrapperStyle = {
 
 export default function Intro() {
   const history = useHistory();
+  const [name, setName] = useState(" ");
 
-  function onSubmit(value: number) {
+  const handleInput = event => {
+    setName(event.target.value);
+  };
+
+
+  function onSubmit() {
+    console.log(name)
     history.push('/intro/step/5')
   }
 
-  return <div style={wrapperStyle} className="page-intro steps step4">
+  return <div style={wrapperStyle} className="page-intro steps step5">
     <div>
-      <Steps step={2} />
+      <Steps step={5} />
       <img src="/img/引导页2/引导页-客服机器人.png" alt="" />
       <img className="dialog" src="/img/引导页客服对话/引导页-对话框姓名.png" alt="" />
     </div>
-    <div>
-      <h2>单选</h2>
-    </div>
+    <footer>
+      <ul>
+        <li>取消</li>
+        <li>姓名</li>
+        <li onClick={onSubmit}>确定</li>
+      </ul>
+      <div>
+        <input onChange={handleInput} type="text"/>
+      </div>
+    </footer>
   </div>
 }
 

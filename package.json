@@ -79,6 +79,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
+    "copy2Server": "scp -r ./build/* root@106.13.72.173:/home/rupert/www",
+    "deploy": "npm run build && npm run copy2Server",
     "test": "node scripts/test.js"
   },
   "eslintConfig": {
