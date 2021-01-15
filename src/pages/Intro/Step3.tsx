@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { IonDatetime, IonPickerColumn } from '@ionic/react';
+import { useHistory } from 'react-router-dom';
 import Steps from '@/components/Steps';
 
 const wrapperStyle = {
@@ -7,6 +8,7 @@ const wrapperStyle = {
 }
 
 export default function Intro() {
+  const history = useHistory();
   const [selectedDate, setSelectedDate] = useState<string>('2012-12-15T13:47:20.789');
   const dateRef = useRef<HTMLIonDatetimeElement>(null)
   const imgRef = useRef(null)
@@ -34,6 +36,7 @@ export default function Intro() {
       value={selectedDate} 
       onIonChange={e => {
         setSelectedDate(e.detail.value!);
+        history.push('/intro/step/4')
       }}
       ></IonDatetime>
   </div>

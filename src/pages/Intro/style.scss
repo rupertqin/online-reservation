@@ -1,12 +1,12 @@
 html {
-  font-size: (100/640)*10vw;
+  font-size: 10px;
 }
 
 
 .page-intro {
   // background: url('/img/个人信息/个人信息-信息图标.png') no-repeat;
   min-height: 100%;
-  padding: 3rem;
+  padding: 3rem 3rem 4rem;
   font-size: 3rem;
   overflow: hidden;
 
@@ -31,12 +31,27 @@ html {
     }
 
     img.dialog {
-      margin-left: -18px;
     }
 
     &.step1 {
       .comp-radio {
         padding: 0 2rem;
+      }
+    }
+
+    &.step4 {
+      .comp-radio {
+        .list {
+          button {
+            padding: 1.1em;
+            width: 180px;
+            height: 180px;
+            letter-spacing: 0.6em;
+            border-radius: 2rem;
+            text-align: right;
+            line-height: 168%;
+          }
+        }
       }
     }
   }
@@ -51,7 +66,7 @@ html {
   }
   button {
     border: none;
-    border-radius: 2rem;
+    border-radius: 1rem;
     background: rgb(104, 226,	220);
     width: 184px;
     line-height: 72px;
