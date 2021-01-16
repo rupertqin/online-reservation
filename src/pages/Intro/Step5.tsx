@@ -20,7 +20,7 @@ export default function Step5() {
   function onSubmit() {
     setIntro({ ...intro, step5: name })
     setTimeout(() => {
-      history.push('/intro/step/1')
+      history.push('/intro/step/analyzing')
     }, 0)
   }
 

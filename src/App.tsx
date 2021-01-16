@@ -8,6 +8,8 @@ import Step2 from "./pages/Intro/Step2"
 import Step3 from "./pages/Intro/Step3"
 import Step4 from "./pages/Intro/Step4"
 import Step5 from "./pages/Intro/Step5"
+import Analyzing from "./pages/Intro/Analyzing"
+import Success from "./pages/Intro/Success"
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -65,6 +67,8 @@ const AlertExample: React.FC = () => {
             <Route path="/intro/step/3" exact> <Step3 /> </Route>
             <Route path="/intro/step/4" exact> <Step4 /> </Route>
             <Route path="/intro/step/5" exact> <Step5 /> </Route>
+            <Route path="/intro/step/analyzing" exact> <Analyzing /> </Route>
+            <Route path="/intro/step/success" exact> <Success /> </Route>
             <Route path="/intro" exact> <Intro /> </Route>
             <Redirect from="/" to="/intro" />
             <Route path="/about"> <About /> </Route>
