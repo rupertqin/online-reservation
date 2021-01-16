@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { RecoilRoot } from 'recoil';
 import { IonAlert, IonButton, IonContent, setupConfig } from '@ionic/react';
 
 import Intro from "./pages/Intro/Intro"
@@ -39,38 +40,40 @@ setupConfig({
 
 const AlertExample: React.FC = () => {
   return (
-    <Router>
-      <div className="root-inner">
-        {/* <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-          </ul>
-        </nav> */}
+    <RecoilRoot>
+      <Router>
+        <div className="root-inner">
+          {/* <nav>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/about">About</Link>
+              </li>
+              <li>
+                <Link to="/users">Users</Link>
+              </li>
+            </ul>
+          </nav> */}
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/intro/step/1" exact> <Step1 /> </Route>
-          <Route path="/intro/step/2" exact> <Step2 /> </Route>
-          <Route path="/intro/step/3" exact> <Step3 /> </Route>
-          <Route path="/intro/step/4" exact> <Step4 /> </Route>
-          <Route path="/intro/step/5" exact> <Step5 /> </Route>
-          <Route path="/intro" exact> <Intro /> </Route>
-          <Redirect from="/" to="/intro" />
-          <Route path="/about"> <About /> </Route>
-          <Route path="/users"> <Users /> </Route>
-          <Route path="/"> <Home /> </Route>
-        </Switch>
-      </div>
-    </Router>
+          {/* A <Switch> looks through its children <Route>s and
+              renders the first one that matches the current URL. */}
+          <Switch>
+            <Route path="/intro/step/1" exact> <Step1 /> </Route>
+            <Route path="/intro/step/2" exact> <Step2 /> </Route>
+            <Route path="/intro/step/3" exact> <Step3 /> </Route>
+            <Route path="/intro/step/4" exact> <Step4 /> </Route>
+            <Route path="/intro/step/5" exact> <Step5 /> </Route>
+            <Route path="/intro" exact> <Intro /> </Route>
+            <Redirect from="/" to="/intro" />
+            <Route path="/about"> <About /> </Route>
+            <Route path="/users"> <Users /> </Route>
+            <Route path="/"> <Home /> </Route>
+          </Switch>
+        </div>
+      </Router>
+    </RecoilRoot>
   )
 }
 

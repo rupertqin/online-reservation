@@ -2,19 +2,26 @@ import React, { useState, useRef } from 'react';
 import { IonDatetime, IonPickerColumn } from '@ionic/react';
 import { useHistory } from 'react-router-dom';
 import Steps from '@/components/Steps';
+import { useRecoilState } from 'recoil';
+import { introState } from './store';
 
 const wrapperStyle = {
   background: 'url(/img/引导页2/bg.png) top/100% no-repeat',
 }
 
-export default function Intro() {
+let isOpen = false;
+
+export default function Step3() {
   const history = useHistory();
-  const [selectedDate, setSelectedDate] = useState<string>('2012-12-15T13:47:20.789');
+  const [intro, setIntro] = useRecoilState(introState);
   const dateRef = useRef<HTMLIonDatetimeElement>(null)
   const imgRef = useRef(null)
 
   function say() {
-    dateRef?.current?.open();
+    if (dateRef.current && !isOpen) {
+      dateRef.current.open();
+      isOpen = true;
+    }
   }
   setTimeout(say, 0)
 
@@ -33,9 +40,9 @@ export default function Intro() {
       }}
       min="1994-03-14" 
       max="2012-12-09"
-      value={selectedDate} 
+      value={intro.step3 || "2012-12-15"} 
       onIonChange={e => {
-        setSelectedDate(e.detail.value!);
+        setIntro({ ...intro, step3: e.detail.value })
         history.push('/intro/step/4')
       }}
       ></IonDatetime>

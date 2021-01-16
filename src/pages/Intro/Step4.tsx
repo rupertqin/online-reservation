@@ -2,6 +2,8 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import Steps from '@/components/Steps';
 import CompRadio from '../../components/CompRadio';
+import { useRecoilState } from 'recoil';
+import { introState } from './store';
 
 const wrapperStyle = {
   background: 'url(/img/引导页2/bg.png) top/100% no-repeat',
@@ -21,11 +23,15 @@ const options = [
   }
 ];
 
-export default function Intro() {
+export default function Step4() {
   const history = useHistory();
+  const [intro, setIntro] = useRecoilState(introState);
 
   function onSubmit(value: number) {
-    history.push('/intro/step/5')
+    setIntro({ ...intro, step4: value })
+    setTimeout(() => {
+      history.push('/intro/step/5')
+    }, 0)
   }
 
   return <div style={wrapperStyle} className="page-intro steps step4">

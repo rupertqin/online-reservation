@@ -1,23 +1,27 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Steps from '@/components/Steps';
+import { useRecoilState } from 'recoil';
+import { introState } from './store';
 
 const wrapperStyle = {
   background: 'url(/img/引导页2/bg.png) top/100% no-repeat',
 }
 
-export default function Intro() {
+export default function Step5() {
   const history = useHistory();
+  const [intro, setIntro] = useRecoilState(introState);
   const [name, setName] = useState(" ");
 
   const handleInput = event => {
     setName(event.target.value);
   };
 
-
   function onSubmit() {
-    console.log(name)
-    history.push('/intro/step/5')
+    setIntro({ ...intro, step5: name })
+    setTimeout(() => {
+      history.push('/intro/step/1')
+    }, 0)
   }
 
   return <div style={wrapperStyle} className="page-intro steps step5">
@@ -33,7 +37,7 @@ export default function Intro() {
         <li onClick={onSubmit}>确定</li>
       </ul>
       <div>
-        <input onChange={handleInput} type="text"/>
+        <input onChange={(event) => handleInput(event)} type="text"/>
       </div>
     </footer>
   </div>

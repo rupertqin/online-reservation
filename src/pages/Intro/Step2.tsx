@@ -2,13 +2,21 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { IonPicker, IonPickerColumn} from '@ionic/react';
 import Steps from '@/components/Steps';
+import { useRecoilState } from 'recoil';
+import { introState } from './store';
 
 const wrapperStyle = {
   background: 'url(/img/引导页2/bg.png) top/100% no-repeat',
 }
 
-export default function Intro() {
+export default function Step2() {
   const history = useHistory();
+  const [intro, setIntro] = useRecoilState(introState);
+
+  function onSubmit(value) {
+    setIntro({ ...intro, step2: value })
+    history.push('/intro/step/3')
+  }
 
   return <div style={wrapperStyle} className="page-intro steps step1">
     <div>
@@ -45,9 +53,7 @@ export default function Intro() {
         },
         {
           text: '确定',
-          handler: (value) => {
-            history.push('/intro/step/3')
-          }
+          handler: onSubmit,
         }
       ]}
       ></IonPicker>
