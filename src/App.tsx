@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { RecoilRoot } from 'recoil';
 import { IonAlert, IonButton, IonContent, setupConfig } from '@ionic/react';
 
+import Ordering from "./pages/Ordering"
+
 import Intro from "./pages/Intro/Intro"
 import Step1 from "./pages/Intro/Step1"
 import Step2 from "./pages/Intro/Step2"
@@ -70,10 +72,10 @@ const AlertExample: React.FC = () => {
             <Route path="/intro/step/analyzing" exact> <Analyzing /> </Route>
             <Route path="/intro/step/success" exact> <Success /> </Route>
             <Route path="/intro" exact> <Intro /> </Route>
-            <Redirect from="/" to="/intro" />
             <Route path="/about"> <About /> </Route>
             <Route path="/users"> <Users /> </Route>
-            <Route path="/"> <Home /> </Route>
+            <Route path="/ordering"> <Ordering /> </Route>
+            <Redirect from="/" to="/ordering" />
           </Switch>
         </div>
       </Router>
