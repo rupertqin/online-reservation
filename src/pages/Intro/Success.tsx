@@ -10,7 +10,7 @@ export default function Analyzing() {
 
   function onConfirm() {
     setTimeout(() => {
-      history.push('/intro/step/success')
+      history.push('/ordering')
     }, 0)
   }
 
