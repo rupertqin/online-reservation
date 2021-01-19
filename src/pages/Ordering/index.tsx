@@ -49,6 +49,7 @@ const dishes = times(10, () => ({
   tags: ["鸡肉","生菜","番茄","黄瓜"],
   weight: 124,
   kcal: 344,
+  amount: 0,
 }))
 
 export default function Analyzing() {
